@@ -1,7 +1,6 @@
 package be.ebbewertz.pygitnodes;
 
 import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -44,12 +43,7 @@ public class DialogViewController {
         updateDisables();
 
 
-        ChangeListener<String> algemeneUpdateBijTextEdit = new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
-                updateDisables();
-            }
-        };
+        ChangeListener<String> algemeneUpdateBijTextEdit = (observableValue, s, t1) -> updateDisables();
         newInputNameField.textProperty().addListener(algemeneUpdateBijTextEdit);
         newOutputNameField.textProperty().addListener(algemeneUpdateBijTextEdit);
         nameField.textProperty().addListener(algemeneUpdateBijTextEdit);

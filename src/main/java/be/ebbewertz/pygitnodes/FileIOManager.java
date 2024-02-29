@@ -2,15 +2,16 @@ package be.ebbewertz.pygitnodes;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
 
 public class FileIOManager {
 
-    public static String pyGitNodeFilesRootDir = "PyGitNodesProjectData";
-    private static String pythonScriptsDir = pyGitNodeFilesRootDir + "\\scripts";
-    private static String nodeDataJsonsDir = pyGitNodeFilesRootDir + "\\nodesData";
+    public final static String pyGitNodeFilesRootDir = "PyGitNodesProjectData";
+    public final static String pythonScriptsDir = pyGitNodeFilesRootDir + "\\scripts";
+    public final static String nodeDataJsonsDir = pyGitNodeFilesRootDir + "\\nodesData";
 
     public static void writeJson(PyGitNode pyGitNode) {
 
@@ -83,4 +84,13 @@ public class FileIOManager {
         }
     }
 
+    public static PyGitNode readJson(String path){
+        Gson gson = new Gson();
+        try (FileReader reader = new FileReader(path)) {
+            return gson.fromJson(reader, PyGitNode.class);
+        } catch (IOException e) {
+            System.out.println("Could not read json file "+path);
+        }
+        return null;
+    }
 }
