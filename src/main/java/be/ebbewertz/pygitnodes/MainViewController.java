@@ -3,7 +3,6 @@ package be.ebbewertz.pygitnodes;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import java.util.ArrayList;
@@ -25,11 +24,6 @@ public class MainViewController {
         ArrayList<String> inputs = new ArrayList<>();
         ArrayList<String> outputs = new ArrayList<>();
 
-        inputs.add("IN_A");
-        inputs.add("IN_B");
-
-        outputs.add("OUT_A");
-        outputs.add("OUT_B");
 
         PyGitNode pyGitNode = new PyGitNode("testNodeFile", "testNodeFunc", "test node", "T", inputs, outputs);
 
@@ -39,7 +33,7 @@ public class MainViewController {
     }
 
     private void createNewPyNode(ActionEvent actionEvent) {
-        Label label = new Label("PyNode");
-        pyNodesSelectionList.getChildren().add(label);
+        NewPyGitNodeCreateDialog dialog = new NewPyGitNodeCreateDialog();
+        dialog.showAndWait();
     }
 }
