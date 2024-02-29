@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class FileIOManager {
 
-    public static String pyGitNodeFilesRootDir = "C:\\Users\\ebbew\\Documents\\mijn documenten\\JAVA\\PyGitNodes\\PyGitNodes";
+    public static String pyGitNodeFilesRootDir = "PyGitNodesProjectData";
     private static String pythonScriptsDir = pyGitNodeFilesRootDir + "\\scripts";
     private static String nodeDataJsonsDir = pyGitNodeFilesRootDir + "\\nodesData";
 

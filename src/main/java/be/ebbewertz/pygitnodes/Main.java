@@ -15,7 +15,6 @@ public class Main extends Application {
         stage.setTitle("PyGitNodes");
         stage.setScene(scene);
         stage.show();
-        Person person = new Person("Ebbe", 19);
     }
 
     public static void main(String[] args) {

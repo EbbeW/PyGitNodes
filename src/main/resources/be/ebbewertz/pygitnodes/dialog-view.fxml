@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<DialogPane fx:id="dialogPane" expanded="true" headerText="Create a new PyGitNode" prefWidth="500" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="be.ebbewertz.pygitnodes.DialogViewController">
+   <buttonTypes>
+      <ButtonType fx:constant="OK" />
+      <ButtonType fx:constant="CANCEL" />
+   </buttonTypes>
+   <content>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <TextField fx:id="newInputNameField" layoutX="180.0" layoutY="150.0" prefWidth="120.0" />
+            <Button fx:id="newInputButton" layoutX="305.0" layoutY="150.0" mnemonicParsing="false" text="+" />
+            <TextField fx:id="newOutputNameField" layoutX="340.0" layoutY="150.0" prefWidth="120.0" />
+            <Button fx:id="newOutputButton" layoutX="465.0" layoutY="150.0" mnemonicParsing="false" text="+" />
+            <TextField fx:id="nameField" layoutX="14.0" layoutY="27.0" />
+            <Label layoutX="14.0" layoutY="5.0" text="Name" />
+            <Label layoutX="14.0" layoutY="69.0" text="Short name / abbreviation" />
+            <TextField fx:id="shortNameField" layoutX="14.0" layoutY="87.0" />
+            <Separator layoutX="172.0" orientation="VERTICAL" prefHeight="200.0" />
+            <ScrollPane layoutX="181.0" layoutY="27.0" prefHeight="120.0" prefWidth="150.0">
+               <content>
+                  <VBox fx:id="inputsList" prefHeight="20.0" prefWidth="150.0" />
+               </content></ScrollPane>
+            <ScrollPane layoutX="341.0" layoutY="27.0" prefHeight="120.0" prefWidth="150.0">
+               <content>
+                  <VBox fx:id="outputsList" prefHeight="20.0" prefWidth="150.0" />
+               </content></ScrollPane>
+            <Label layoutX="181.0" layoutY="5.0" text="Inputs" />
+            <Label layoutX="341.0" layoutY="6.0" text="Outputs" />
+         </children>
+      </AnchorPane>
+   </content>
+</DialogPane>
