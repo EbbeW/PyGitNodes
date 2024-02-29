@@ -24,6 +24,8 @@ public class MainViewController {
         ArrayList<String> inputs = new ArrayList<>();
         ArrayList<String> outputs = new ArrayList<>();
 
+        outputs.add("first");
+        outputs.add("last");
 
         PyGitNode pyGitNode = new PyGitNode("testNodeFile", "testNodeFunc", "test node", "T", inputs, outputs);
 

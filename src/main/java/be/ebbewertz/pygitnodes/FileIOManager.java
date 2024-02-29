@@ -58,7 +58,7 @@ public class FileIOManager {
             writer.write("def "+pyGitNode.pythonFunctionName+"(");
             i=1;
             for(String input : pyGitNode.inputs){
-                writer.write(input);
+                writer.write(input.replace(" ", "_"));
                 if(i < pyGitNode.inputs.size()){
                     writer.write(", ");
                 }
@@ -69,7 +69,7 @@ public class FileIOManager {
             writer.write("\treturn ");
             i=1;
             for(String output : pyGitNode.outputs){
-                writer.write(output);
+                writer.write(output.replace(" ", "_"));
                 if(i < pyGitNode.inputs.size()){
                     writer.write(", ");
                 }
